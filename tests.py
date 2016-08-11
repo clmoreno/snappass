@@ -19,6 +19,8 @@ class SnapPassTestCase(TestCase):
     def test_get_password(self):
         password = "melatonin overdose 1337!$"
         key = snappass.set_password(password, 30)
+        print type(password)
+        print type(key)
         self.assertEqual(password, snappass.get_password(key))
         # Assert that we can't look this up a second time.
         self.assertEqual(None, snappass.get_password(key))
